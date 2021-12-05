@@ -1,6 +1,6 @@
 # Source= https://angular.io/guide/testing**//
 # Learn yaml file https://www.tutorialspoint.com/yaml/yaml_comments.htm
-name: CI Angular app through Github Actions
+name: Continuous Integration of App
 on: push
 jobs:
   build:

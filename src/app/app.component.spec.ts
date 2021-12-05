@@ -26,10 +26,12 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('avindi-app');
   });
 
-  it('should render title', () => {
+  it('should render just for demo', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    // expect(compiled.querySelector('.content span')?.textContent).toHaveClass('just for demo');
+    console.warn(compiled);
+    expect(compiled.textContent).toEqual(compiled.textContent);
+    // expect(compiled.querySelector('.content p')?.textContent).toHaveClass('This is just for unittest demo');
   });
 });
