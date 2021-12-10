@@ -21,7 +21,7 @@ h6,
 
 /* Button*/
 .btn-round {
-  border-radius: 30px;
+  border-radius: 30px !important;
 }
 
 /* Hilfeklasse see Bootstrap page in d- section*/
@@ -30,7 +30,7 @@ h6,
 }
 
 section {
-  padding: 140px;
+  padding: 140px 0;
 }
 
 /* Navigation*/
@@ -56,5 +56,19 @@ section {
 
 /* Hero*/
 .hero-bg {
-  background: url(../src/assets/img/bg-hero.jpg) 50% 0 fixed no-repeat;
+  background: url(./assets/img/bg-hero.jpg) 50% 0 fixed no-repeat;
+  /* ViewPort height*/
+  height: 100vh;
+  /* Avoid white columns   ugly*/
+  background-size: cover;
+
+}
+
+#home .container {
+  height: 100%;
+}
+
+/* Hier greife ich row of div in home section*/
+#home .row {
+  height: 80%;
 }
