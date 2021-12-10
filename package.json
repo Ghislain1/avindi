@@ -1,9 +1,9 @@
 {
   "name": "avindi-app",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -22,6 +22,7 @@
     "@fortawesome/fontawesome-free": "5.15.4",
     "bootstrap": "5.1.3",
     "rxjs": "~7.4.0",
+    "simple-line-icons": "^2.5.5",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
