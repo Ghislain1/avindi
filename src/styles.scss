@@ -38,7 +38,6 @@ section {
 .navbar.navbar-dark button:focus,
 .navbar.navbar-dark .nav-link:hover {
   color: #dc3545 !important;
-
 }
 
 .navbar-nav .badge {
@@ -71,4 +70,25 @@ section {
 /* Hier greife ich row of div in home section*/
 #home .row {
   height: 80%;
+}
+
+/* Footer*/
+a .text-white:hover,
+a.text-white:hover {
+  color: #dc3545 !important;
+  text-decoration: none;
+}
+
+.bg-black {
+  background-color: rgb(128, 125, 125);
+}
+
+/* Contact*/
+.input-group-lg>.form-control {
+  border-radius: 30px;
+}
+
+.input-group-lg .input-group-prepend .input-group-text {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
 }

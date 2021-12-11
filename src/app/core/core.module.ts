@@ -5,23 +5,39 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegistryComponent } from './components/registry/registry.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent }
-
+  { path: 'about', component: AboutComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'registry', component: RegistryComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent }
 ];
 // list of component which can be used outside of this module
-const components: any = [HeaderComponent, FooterComponent, HomeComponent]
+const exportedComponents: any = [
+  HeaderComponent,
+  FooterComponent,
+]
 
 @NgModule({
-  declarations: [components, AboutComponent],
+  declarations: [
+    exportedComponents,
+    HomeComponent,
+    LoginComponent,
+    AboutComponent,
+    RegistryComponent,
+    PageNotFoundComponent
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
   ],
   exports: [
-    components
+    exportedComponents // to use app-header in app.component.html
   ]
 })
 export class CoreModule { }
