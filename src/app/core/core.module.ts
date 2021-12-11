@@ -8,7 +8,7 @@ import { AboutComponent } from './components/about/about.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistryComponent } from './components/registry/registry.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -36,6 +36,7 @@ const exportedComponents: any = [
   imports: [
     CommonModule,
     FormsModule,// due to form in html
+    ReactiveFormsModule, // This provides convenient methods for generating controls.
     RouterModule.forChild(routes)
   ],
   exports: [
