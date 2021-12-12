@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test2": "ng test --no-watch --no-progress --browsers=ChromeHeadlessCI"
+    "test2": "ng test --no-watch --no-progress --browsers=ChromeHeadlessCI",
+    "deploy": "ng lint && ng build --prod --output-path docs --base-href /avindi/"
   },
   "private": true,
   "dependencies": {

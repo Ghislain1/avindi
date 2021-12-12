@@ -32,9 +32,7 @@ export class LoginComponent implements OnInit {
   getMessage() {
     return 'Logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
   }
-  // convenience getter for easy access to form fields
-  get name() { return this.loginForm.get('name'); }
-  get password() { return this.loginForm.get('password'); }
+
 
   onSubmit(): void {
     // Process checkout data here
@@ -44,7 +42,6 @@ export class LoginComponent implements OnInit {
       this.loginForm.reset();
     }
     console.warn('Your order has been submitted', this.loginForm.value);
-
   }
 
   private login() {
@@ -73,5 +70,9 @@ export class LoginComponent implements OnInit {
     this.authService.logout();
     this.message = this.getMessage();
   }
+
+  // convenience getter for easy access to form fields
+  get name() { return this.loginForm.get('name'); }
+  get password() { return this.loginForm.get('password'); }
 
 }
