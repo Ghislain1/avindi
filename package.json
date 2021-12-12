@@ -9,7 +9,8 @@
     "test": "ng test",
     "test2": "ng test --no-watch --no-progress --browsers=ChromeHeadlessCI",
     "deploy": "ng build --output-path docs --base-href /avindi/",
-    "outdated": "git status && npm outdated"
+    "outdated": "git status && npm outdated",
+    "dev" : "git add * && git commit -am . && git push"
   },
   "private": true,
   "dependencies": {
