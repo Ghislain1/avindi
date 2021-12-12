@@ -8,8 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test2": "ng test --no-watch --no-progress --browsers=ChromeHeadlessCI",
-    "deploy": "ng build --prod --output-path docs --base-href /avindi/ && npm outdated",
-    "outdated": "npm outdated"
+    "deploy": "ng build --output-path docs --base-href /avindi/",
+    "outdated": "git status && npm outdated"
   },
   "private": true,
   "dependencies": {
