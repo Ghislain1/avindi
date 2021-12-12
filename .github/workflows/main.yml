@@ -25,8 +25,13 @@ jobs:
           npm i
           npm run deploy
 
-      - name: Deploy static files (Github page - into docs folder) # TODO What happen here ?
+        # Just demo to show how to read parameter with ${{}}
+      - name: ${{ github.workflow }}-${{ github.ref }}
+        run: dir
+
+      - name: Deploy static files (Github page - into docs folder)
         uses: peaceiris/actions-gh-pages@v3.7.0-8
+        if: ${{ github.ref == 'refs/heads/main' }} # Only main branch
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }} # ???
           destination_dir: ./docs
