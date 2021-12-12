@@ -26,16 +26,16 @@ jobs:
           npm run deploy
 
         # Just demo to show how to read parameter with ${{}}
-      - name: ${{ github.workflow }}-${{ github.ref }}
+      - name: ${{github.workflow }}-${{github.ref }}
         run: dir
 
       - name: Deploy static files (Github page - into docs folder)
         uses: peaceiris/actions-gh-pages@v3.7.0-8
         if: ${{ github.ref == 'refs/heads/main' }} # Only main branch
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # ???
+          github_token: ${{secrets.GITHUB_TOKEN}} # ???
           destination_dir: ./docs
           publish_dir: ./docs
           #publish_branch: master # Set Another GitHub Pages Branch, but we want under foder docs!!
-          commit_message: ${{ github.event.head_commit.message }} # Set custom commit message
+          commit_message: ${{github.event.head_commit.message}} # Set custom commit message
           force_orphan: true # allows you to make your publish branch with only the latest commit
