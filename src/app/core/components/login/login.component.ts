@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
 
 
   onSubmit(): void {
-    // Process checkout data here
+
     this.login();
 
     if (this.authService.isLoggedIn) {

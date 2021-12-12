@@ -25,7 +25,7 @@ jobs:
           npm i
           npm run deploy
 
-      - name: Deploy static files (Github page) # TODO What happen here ?
+      - name: Deploy static files (Github page - into docs folder) # TODO What happen here ?
         uses: peaceiris/actions-gh-pages@v3.7.0-8
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }} # ???
