@@ -1,5 +1,5 @@
 # AvindiApp
-* [Live](https://ghislain1.github.io/avindi) - see page in live action
+* [Live](https://ghislain1.github.io/avindi/home) - see page in live action
 ## Intro
 * [Inspiration 1](https://github.com/ganatan/angular12-app): Angular project with posgress
 * [Inspiration 2](https://github.com/gothinkster/angular-realworld-example-app): Angular Simple 
