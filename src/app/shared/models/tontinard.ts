@@ -5,6 +5,7 @@ export interface Tontinard {
   confirmPassword: string,
   email: string,
   confirmEmail: string,
+  existAlready: boolean,
 }
 
 export interface TontinardInfo {

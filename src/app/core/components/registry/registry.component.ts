@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { Tontinard, TontinardInfo } from 'src/app/shared/models/tontinard';
+import { AuthService } from 'src/app/shared/services/auth.service';
 import { TontinardService } from 'src/app/shared/services/tontinard.service';
 
 @Component({
@@ -18,7 +19,7 @@ export class RegistryComponent implements OnInit {
   isSubmitting = false;
 
   constructor(private router: Router,
-    private tontinardService: TontinardService,
+    private tontinardService: TontinardService,// provides logic to manage tontinards
     private fb: FormBuilder) {
     // create form group using the form builder
     this.registryForm = this.fb.group({
@@ -35,19 +36,21 @@ export class RegistryComponent implements OnInit {
   }
 
   submitForm() {
-    console.log(this.speechword?.value);
+    /* console.log(this.speechword?.value);
     console.log(this.userName?.value);
     console.log(this.password?.value);
     console.log(this.confirmPassword?.value);
     console.log(this.email?.value);
-    console.log(this.confirmEmail?.value);
+    console.log(this.confirmEmail?.value); */
     this.isSubmitting = true;
     this.updateTontinard(this.registryForm.value);
 
-    this.log(this.tontinard);
-  }
-  private log(value: any) {
-    console.info('Submittion', JSON.stringify(value, null, 4));
+
+    // talk to server
+    this.tontinardService.save(this.tontinard).subscribe(response => {
+      this.isSubmitting = false;
+      this.log(response);
+    });
   }
 
   /**
@@ -67,5 +70,8 @@ export class RegistryComponent implements OnInit {
   get email() { return this.registryForm.get('email'); }
   get confirmEmail() { return this.registryForm.get('confirmEmail'); }
 
+  private log(value: any) {
+    console.info('Submittion', JSON.stringify(value, null, 4));
+  }
 
 }
