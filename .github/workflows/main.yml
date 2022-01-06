@@ -23,7 +23,7 @@ jobs:
       - name: Deployment in Action
         run: |
           npm i
-          npm run github-pages
+          npm run create-github-pages
 
         # Just demo to show how to read parameter with ${{}}
       - name: ${{github.workflow }}-${{github.ref }}
