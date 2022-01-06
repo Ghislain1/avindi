@@ -1,10 +1,18 @@
 export interface Tontinard {
+  speechword: string,
+  username: string,
+  password: string,
+  confirmPassword: string,
+  email: string,
+  confirmEmail: string,
+}
+
+export interface TontinardInfo {
   id: string,
   name: string,
   entryDate: Date,
   avatar: string,
   sex: string,
-  email: string,
   isAdmin: boolean,
-  password: string
+  tontinard: Tontinard,
 }
