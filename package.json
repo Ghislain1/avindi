@@ -8,8 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test2": "ng test --no-watch --no-progress --browsers=ChromeHeadlessCI",
-    "deploy": "ng build --output-path docs --base-href /avindi/",
-    "outdated": "git status && npm outdated",
+    "github-pages": "ng build --output-path docs --base-href /avindi/ && npm run copy",
+    "copy": "cd docs && copy /y index.html 404.html",
+     "outdated": "git status && npm outdated",
     "dev" : "git add * && git commit -am . && git push"
   },
   "private": true,
