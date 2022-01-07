@@ -1,20 +1,18 @@
  <header>
 
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-0">
-
      <div class="container">
-
        <a href="#home" class="navbar-brand font-alt">
          <img height="40" src="assets/img/logo.svg" alt="Logp MUg" class="mr-2 mb-3"> Mug &amp; Move
        </a>
        <!--Toggle button-->
        <button aria-controls="navbar-toggle" aria-expanded="true" aria-label="Toggle navigation"
-         data-target="#navbar-toggle" arial-controls="navbar-toggle" type="button" class="navbar-toggler btn-round"
-         data-toggle="collapse">
+         data-bs-target="#navbarToggleID" arial-controls="navbarToggleID" type="button" class="navbar-toggler collapsed"
+         aria-expanded="false" data-bs-toggle="collapse">
          <span class="icon-menu"></span>
        </button>
 
-       <div class="collapse navbar-collapse justify-content-end text-uppercase" id="navbar-toggle">
+       <div class="collapse navbar-collapse justify-content-end text-uppercase" id="navbarToggleID">
          <ul class="navbar-nav">
            <li class="nav-item">
              <a routerLink="/home" class="nav-link">Home</a>
