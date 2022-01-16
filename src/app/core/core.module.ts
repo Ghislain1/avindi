@@ -9,6 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistryComponent } from './components/registry/registry.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -37,6 +38,7 @@ const exportedComponents: any = [
     CommonModule,
     FormsModule,// due to form in html
     ReactiveFormsModule, // This provides convenient methods for generating controls.
+    HttpClientModule,
     RouterModule.forChild(routes)
   ],
   exports: [

@@ -10,7 +10,7 @@ describe('AdminComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [AdminComponent],
-      imports: [RouterTestingModule], // <====
+      imports: [RouterTestingModule], // <==== 
     })
       .compileComponents();
   });

@@ -2,11 +2,13 @@ import { Injectable } from '@angular/core';
 import { delay, map, Observable } from 'rxjs';
 import { Tontinard } from '../models/tontinard';
 import { ApiService } from './api.service';
+// https://angular.io/tutorial/toh-pt6  see   HeroService
 
 @Injectable({
   providedIn: 'root'
 })
 export class TontinardService {
+  private tontinardUrl = 'api/articles';  // URL to web api
 
   constructor(private apiService: ApiService) { }
 
@@ -25,7 +27,7 @@ export class TontinardService {
   }
 
   getBlogs() {
-    return this.apiService.get('/articles');
+    return this.apiService.get(this.tontinardUrl);
   }
 
 
