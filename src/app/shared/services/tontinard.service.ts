@@ -24,4 +24,9 @@ export class TontinardService {
     }
   }
 
+  getBlogs() {
+    return this.apiService.get('/articles');
+  }
+
+
 }
