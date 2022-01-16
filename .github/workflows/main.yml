@@ -1,7 +1,11 @@
 # Source= https://angular.io/guide/testing**//
 # Learn yaml file https://www.tutorialspoint.com/yaml/yaml_comments.htm
-name: Continuous Integration of App
-on: push
+# Read me: https://gohugo.io/hosting-and-deployment/hosting-on-github/
+name: Continuous Integration of Client App
+on:
+  push:
+    branches:
+      - main # Set a branch to deploy
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,6 +19,7 @@ jobs:
       - name: Setup
         run: npm ci
 
+      # Run Units test to test each UI in the app ohne browsers
       - name: Test
         run: |
           npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
@@ -29,14 +34,19 @@ jobs:
       - name: ${{github.workflow }}-${{github.ref }}
         run: dir
 
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "latest"
+
       - name: Deploy static files (Github page - into docs folder)
         uses: peaceiris/actions-gh-pages@v3.7.0-8
-        # if: ${{ github.ref == 'refs/heads/main' }} # Only main branch
+        if: ${{ github.ref == 'refs/heads/main' }} # Only main branch
         with:
           github_token: ${{secrets.GITHUB_TOKEN}} # set automatically
           keep_files: false # Keeping existing files
-          # destination_dir: cs # The Folder(from publish_dir ) Where gh-page point his html files
-          publish_dir: ./docs # Sources folder to gest all html files
+          destination_dir: ./docs # The Folder(from publish_dir ) Where gh-page point his html files
+          publish_dir: ./docs # Sources folder to get all html files
           commit_message: ----> ${{github.event.head_commit.message}} <---- # Set custom commit message
           force_orphan: true # allows you to make your publish branch with only the latest commit
-          publish_branch: gh-pages # Set Another GitHub Pages Branch, but we want under foder docs!!
+          # publish_branch: gh-pages # Set Another GitHub Pages Branch, but we want under foder docs!!
