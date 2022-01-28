@@ -12,7 +12,7 @@ export class AboutComponent implements OnInit {
   items: any;
   ngOnInit(): void {
 
-    this.tontinardService.getBlogs().subscribe(i => this.items = i);
+    this.tontinardService.getDemo().subscribe(i => this.items = i);
   }
 
 }
