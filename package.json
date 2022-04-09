@@ -12,7 +12,7 @@
     "copy-index": "cd docs && cp index.html 404.html",
     "outdated": "git status && npm outdated",
     "dev": "git add * && git commit -am . && git push",
-    "update-packages": ""
+    "update-packages": "TODO"
   },
   "private": true,
   "dependencies": {
