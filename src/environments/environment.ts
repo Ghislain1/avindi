@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   api_url: 'https://mns237-serverapi.herokuapp.com/api/', // base Api url
-  api_url_mns237: ' https://mns237-serverapi.herokuapp.com/api/' // ie. api/articles in service
+  api_url_mns237: 'https://mns237-serverapi.herokuapp.com/api/' // ie. api/articles in service
 
 };
 
