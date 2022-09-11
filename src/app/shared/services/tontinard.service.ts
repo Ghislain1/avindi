@@ -11,7 +11,7 @@ import { ApiService } from './api.service';
 })
 export class TontinardService {
   private tontinardUrl = 'api/articles';  // URL to web api
-  private demoUrl = environment.api_url2;
+  private demoUrl = environment.api_url_mns237;
   constructor(private httpClient: HttpClient, private apiService: ApiService) { }
 
   save(tontinard: Tontinard): Observable<Tontinard> {
@@ -33,10 +33,10 @@ export class TontinardService {
   }
   /** GET: Demo from server */
   getDemo(): Observable<any[]> {
-    const url = `${this.demoUrl}/tags`;
+    const url = `${this.demoUrl}/blogs`;
     return this.httpClient.get<any[]>(url).pipe(
       tap(_ => console.log('fetched Demo ')),
-      catchError(this.handleError<any[]>('getVideos', []))
+      catchError(this.handleError<any[]>('getDemo()', []))
     );
   }
 
