@@ -6,7 +6,8 @@
   "scripts": {
    "clean": "node clean.mjs",
     "start": "npx live-server src",
-    "build": "npm run clean && mkdir dist && cpx -r src/* dist/",
+    "build": "npm run clean && npm run parcel-build",
+    "parcel-build": "parcel build src/index.html --dist-dir dist --public-url ./",
     "deploy": "npm run build && surge ./dist $SURGE_DOMAIN --token $SURGE_TOKEN"
   },
   "keywords": [
