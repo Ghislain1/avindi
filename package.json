@@ -2,7 +2,7 @@
   "name": "my-website",
   "version": "1.0.0",
   "description": "A static website built with HTML, CSS, and JavaScript, deployed to Surge via GitHub Actions.",
-  "main": "index.html",
+
   "scripts": {
    "clean": "node clean.mjs", 
    "start": "parcel src/index.html --open",
