@@ -4,7 +4,7 @@
   "description": "A static website built with HTML, CSS, and JavaScript, deployed to Surge via GitHub Actions.",
   "main": "index.html",
   "scripts": {
-    "clean": "rimraf dist",
+   "clean": "node clean.mjs",
     "start": "npx live-server src",
     "build": "npm run clean && mkdir dist && cpx -r src/* dist/",
     "deploy": "npm run build && surge ./dist $SURGE_DOMAIN --token $SURGE_TOKEN"
