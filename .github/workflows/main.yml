@@ -1,52 +1,42 @@
 # Source= https://angular.io/guide/testing**//
 # Learn yaml file https://www.tutorialspoint.com/yaml/yaml_comments.htm
 # Read me: https://gohugo.io/hosting-and-deployment/hosting-on-github/
-name: Continuous Integration of Client App
+ 
+name: Deploy  to Surge
+
 on:
   push:
     branches:
-      - main # Set a branch to deploy
+      - main  # Trigger on push to main branch
+
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14.x
+    # 1️⃣ Checkout the repository
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-      - name: Setup
-        run: npm ci
+    # 2️⃣ Set up Node.js (optional if you need npm build, otherwise skip)
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    
+    - name: Install dependencies
+      run: npm install
 
-      # Run Units test to test each UI in the app ohne browsers
-      - name: Test
-        run: |
-          npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+    # 4️⃣ Build project (if you have a build step)
+    - name: Build
+      run: npm run build
 
-        # No 'uses' keyword because we want to run script from package.json file
-      - name: Deployment in Action
-        run: |
-          npm i
-          npm run create-github-pages
+   # 3️⃣ Install Surge CLI globally
+    - name: Install Surge
+      run: npm install -g surge
 
-        # Just demo to show how to read parameter with ${{}}
-      - name: ${{github.workflow }}-${{github.ref }}
-        run: dir
-
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: "latest"
-
-      - name: Deploy static files (Github page - into docs folder)
-        uses: peaceiris/actions-gh-pages@v3.7.0-8
-        #  if: ${{ github.ref == 'refs/heads/main' }} # Only main branch
-        with:
-          github_token: ${{secrets.GITHUB_TOKEN}} # set automatically
-          keep_files: false # Keeping existing files
-          # destination_dir: ./docs # The Folder(from publish_dir ) Where gh-page point his html files
-          publish_dir: ./docs # Sources folder to get all html files
-          commit_message: ----> ${{github.event.head_commit.message}} <---- # Set custom commit message
-          force_orphan: true # allows you to make your publish branch with only the latest commit
-          publish_branch: gh-pages # Default=gh-pages. Set Another GitHub Pages Branch, but we want under foder docs!!
+   # 4️⃣ Deploy to Surge
+    - name: Deploy
+      run: surge ./ ${{secrets.SURGE_DOMAIN }} --token ${{secrets.SURGE_TOKEN }}
+      env:
+        SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
