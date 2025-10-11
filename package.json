@@ -1,13 +1,12 @@
 {
-  "name": "my-static-website",
+  "name": "my-website",
   "version": "1.0.0",
   "description": "A static website built with HTML, CSS, and JavaScript, deployed to Surge via GitHub Actions.",
   "main": "index.html",
   "scripts": {
-   "clean": "node clean.mjs",
-    "start": "npx live-server src",
-    "build": "npm run clean && npm run parcel-build",
-    "parcel-build": "parcel build src/index.html --dist-dir dist --public-url ./",
+   "clean": "node clean.mjs", 
+   "start": "parcel src/index.html --open",
+    "build": "npm run clean && parcel build src/index.html --dist-dir dist --public-url ./",
     "deploy": "npm run build && surge ./dist $SURGE_DOMAIN --token $SURGE_TOKEN"
   },
   "keywords": [
@@ -22,7 +21,7 @@
   "author": "Your Name",
   "license": "MIT",
   "dependencies": {
-    "parcel": "^2.0.0"
+    "parcel": "^2.13.3"
   },
   "devDependencies": {
     "live-server": "^1.1.0",
