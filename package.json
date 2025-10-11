@@ -1,0 +1,28 @@
+{
+  "name": "my-static-website",
+  "version": "1.0.0",
+  "description": "A static website built with HTML, CSS, and JavaScript, deployed to Surge via GitHub Actions.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx live-server src", 
+    "build": "mkdir -p dist && cp -r src/* dist/",
+    "deploy": "npm run build && surge ./dist $SURGE_DOMAIN --token $SURGE_TOKEN"
+  },
+  "keywords": [
+    "static",
+    "website",
+    "html",
+    "css",
+    "javascript",
+    "parcel",
+    "surge"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "parcel": "^2.0.0"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
