@@ -4,7 +4,7 @@
   "description": "A static website built with HTML, CSS, and JavaScript, deployed to Surge via GitHub Actions.",
   "main": "index.html",
   "scripts": {
-    "start": "npx live-server src", 
+    "start": "npx live-server src",
     "build": "mkdir -p dist && cp -r src/* dist/",
     "deploy": "npm run build && surge ./dist $SURGE_DOMAIN --token $SURGE_TOKEN"
   },
@@ -23,6 +23,6 @@
     "parcel": "^2.0.0"
   },
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.0"
   }
 }
