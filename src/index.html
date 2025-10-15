@@ -497,7 +497,7 @@
                 <div class="row">
                     <div class="col-md-6 mb-4 pr-md-4 pl-md-4">
                         <div class="input-group input-group-lg">
-                            <textarea class="form-control" name="nachricht" id="nachricht" placeholder="Nachricht..."
+                            <textarea class="form-control" name="nachricht" id="messageBody" placeholder="Nachricht..."
                                 rows="6"></textarea>
                         </div>
                     </div>
@@ -516,7 +516,8 @@
                             <input type="email" class="form-control" id="email" placeholder="Email...">
                         </div>
                         <div class="text-center w-100">
-                            <button class="btn btn-outline-danger btn-lg  btn-round d-block w-100" type="submit">
+                            <button id="sendMessageButton"
+                                class="btn btn-outline-danger btn-lg  btn-round d-block w-100" type="submit">
                                 Nachricht senden
                             </button>
                         </div>

@@ -39,6 +39,7 @@ my-repo/
 - [Node.js](https://nodejs.org/) (v18+ recommended)
 - [npm](https://www.npmjs.com/)
 - [Surge CLI](https://surge.sh/help/getting-started-with-surge)
+- [Netlify](https://app.netlify.com/teams/ghislain1/projects)
 
 ---
 

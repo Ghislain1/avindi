@@ -2,7 +2,7 @@
 import fs from "fs";
 import path from "path";
 
-const dir = path.resolve("dist");
+const dir = path.resolve("dist1");
 
 // Delete folder if it exists
 if (fs.existsSync(dir)) {

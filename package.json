@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "A static website built with HTML, CSS, and JavaScript, deployed to Surge via GitHub Actions.",
   "scripts": {
-   "clean": "node clean.mjs", 
-   "start": "parcel src/index.html --open",
+    "Token": "5c637f13dafb05f924ca7b4d8544cf39",
+    "clean": "node clean.mjs", 
+    "start": "parcel src/index.html --open",
     "build": "npm run clean && parcel build src/index.html --dist-dir dist --public-url ./",
     "deploy": "npm run build && surge ./dist $SURGE_DOMAIN --token $SURGE_TOKEN"
   },
