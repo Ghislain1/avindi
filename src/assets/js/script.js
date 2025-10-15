@@ -7,5 +7,5 @@ document.getElementById('sendMessageButton').addEventListener('click', function 
     var body = document.getElementById('messageBody').value;
     console.log(to, subject, body);
     // opens user's default mail client
-    // window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
 });

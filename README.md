@@ -1,6 +1,6 @@
 # 🌐 My Static Website
 
-A fast and modern static website built with **HTML**, **CSS**, and **JavaScript**, bundled with **Parcel**, and automatically deployed to **[Surge](https://surge.sh)** using **GitHub Actions**.
+A fast and modern static website built with **HTML**, **CSS**, and **JavaScript**, bundled with **Parcel**, and automatically deployed to **[Netlify]([https://surge.sh)](https://www.netlify.com/)** while pushing.
 
 ---
 
@@ -29,7 +29,7 @@ my-repo/
 ├─ .gitignore
 └─ .github/
     └─ workflows/
-        └─ deploy-surge.yml
+        └─ main.yml
 ```
 
 ---
@@ -38,7 +38,6 @@ my-repo/
 
 - [Node.js](https://nodejs.org/) (v18+ recommended)
 - [npm](https://www.npmjs.com/)
-- [Surge CLI](https://surge.sh/help/getting-started-with-surge)
 - [Netlify](https://app.netlify.com/teams/ghislain1/projects)
 
 ---
